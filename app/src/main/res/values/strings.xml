@@ -1,0 +1,5 @@
+<resources>
+	<string name="app_name">NotificationTest</string>
+	<string name="btn_send_big_picture_notification">Send Big Picture Notification</string>
+	<string name="send_custom_notification">Send Custom Notification</string>
+</resources>
