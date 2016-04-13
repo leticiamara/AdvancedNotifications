@@ -27,5 +27,5 @@ dependencies:
     override:
         - chmod +x gradlew
         - echo y | android update sdk --no-ui --all --filter extra-android-m2repository,android-23
-        - echo y | android update sdk --no-ui --all --filter "build-tools-23.0.3"
+        - echo y | android update sdk --no-ui --all --filter build-tools-23.0.3
         - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
