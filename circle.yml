@@ -9,9 +9,9 @@ test:
     # run tests  against the emulator.
     - ./gradlew connectedAndroidTest
     # copy the build outputs to artifacts
-    - cp -r my-project/build/outputs $CIRCLE_ARTIFACTS
+    - cp -r AdvancedNotifications/build/outputs $CIRCLE_ARTIFACTS
     # copy the test results to the test results directory.
-    - cp -r my-project/build/outputs/androidTest-results/* 
+    - cp -r AdvancedNotifications/build/outputs/androidTest-results/* 
     - (./gradlew assemble):
             timeout: 360
   post:
@@ -19,7 +19,7 @@ test:
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 general:
     artifacts:
-        - /home/ubuntu/your-app-name/app/build/outputs/apk/
+        - /home/ubuntu/AdvancedNotifications/app/build/outputs/apk/
 machine:
     environment:
         ANDROID_HOME: /usr/local/android-sdk-linux
