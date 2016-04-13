@@ -11,7 +11,20 @@ test:
     # copy the build outputs to artifacts
     - cp -r my-project/build/outputs $CIRCLE_ARTIFACTS
     # copy the test results to the test results directory.
-    - cp -r my-project/build/outputs/androidTest-results/* $CIRCLE_TEST_REPORTS
+    - cp -r my-project/build/outputs/androidTest-results/* 
+    - (./gradlew assemble):
+            timeout: 360
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+general:
+    artifacts:
+        - /home/ubuntu/your-app-name/app/build/outputs/apk/
+machine:
+    environment:
+        ANDROID_HOME: /usr/local/android-sdk-linux
+
+dependencies:
+    override:
+        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-21.1.2,android-21,extra-google-m2repository,extra-google-google_play_services,extra-android-support
+        - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
