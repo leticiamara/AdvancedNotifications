@@ -28,3 +28,6 @@ general:
 machine:
     environment:
         ANDROID_HOME: /usr/local/android-sdk-linux
+dependencies:
+    override:
+        - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
