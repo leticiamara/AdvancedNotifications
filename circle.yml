@@ -13,7 +13,7 @@ test:
     # copy the test results to the test results directory.
     - cp -r /home/ubuntu/AdvancedNotifications/app/build/outputs/androidTest-results/* $CIRCLE_TEST_REPORTS
     - (./gradlew assemble):
-            timeout: 360
+            timeout: 1200
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
