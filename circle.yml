@@ -23,6 +23,7 @@ general:
 machine:
     environment:
         ANDROID_HOME: /usr/local/android-sdk-linux
+        ADB_INSTALL_TIMEOUT: "10"
 dependencies:
     pre:
         - chmod +x gradlew
