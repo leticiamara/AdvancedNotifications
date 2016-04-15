@@ -8,6 +8,8 @@ test:
     - circle-android wait-for-boot
     # run tests  against the emulator.
     - ./gradlew connectedAndroidTest
+    # Run Junit Tests
+    - ./gradlew test
     # copy the build outputs to artifacts
     - cp -r /home/ubuntu/AdvancedNotifications/app/build/outputs $CIRCLE_ARTIFACTS
     # copy the test results to the test results directory.
