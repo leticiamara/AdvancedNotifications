@@ -10,6 +10,7 @@ test:
     - ./gradlew connectedAndroidTest
     # Run Junit Tests
     - ./gradlew test
+    - cp -r /home/ubuntu/AdvancedNotifications/app/build/reports/tests/* $CIRCLE_TEST_REPORTS/tests-report
     # copy the build outputs to artifacts
     - cp -r /home/ubuntu/AdvancedNotifications/app/build/outputs $CIRCLE_ARTIFACTS
     # copy the test results to the test results directory.
@@ -36,5 +37,6 @@ dependencies:
         - echo y | android update project --path ./core --library ../appcompat --target android-23
     cache_directories:
     - ~/.android
+    - ~/android
     override:
     - ./gradlew dependencies
