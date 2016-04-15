@@ -19,6 +19,7 @@ test:
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 general:
     artifacts:
+        - /home/ubuntu/AdvancedNotifications/app/build/outputs/apk/
         - /home/ubuntu/AdvancedNotifications/build/outputs/reports/androidTests/connected
 machine:
     environment:
