@@ -18,6 +18,7 @@ test:
     - cp -r /home/ubuntu/AdvancedNotifications/app/build/outputs $CIRCLE_ARTIFACTS
     # copy the test results to the test results directory.
     - cp -r /home/ubuntu/AdvancedNotifications/app/build/outputs/androidTest-results/* $CIRCLE_TEST_REPORTS
+    - cp -r /home/ubuntu/AdvancedNotifications/app/build/outputs/reports/androidTests/connected/* $CIRCLE_TEST_REPORTS
     - (./gradlew assemble):
             timeout: 1200
   post:
