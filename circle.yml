@@ -7,7 +7,7 @@ test:
     # wait for it to have booted
     - circle-android wait-for-boot
     # run tests  against the emulator.
-    - ADB_INSTALL_TIMEOUT=10 ./gradlew connectedAndroidTest
+    - ADB_INSTALL_TIMEOUT=10 (./gradlew connectedAndroidTest):
         timeout: 360
     # Run Junit Tests
     - ./gradlew test
