@@ -8,7 +8,7 @@ test:
     - circle-android wait-for-boot
     # run tests  against the emulator.
     - (./gradlew connectedAndroidTest):
-        timeout: 1200
+        timeout: 2000
     # Run Junit Tests
     - ./gradlew test
     # Copy Junit Tests reports
